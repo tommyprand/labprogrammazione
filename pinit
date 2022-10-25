@@ -1,0 +1,17 @@
+#!/bin/bash
+
+man="Usage: pinit project_name"
+if [ $# -ne 1 ]; then
+	echo $man;
+	exit 1;
+fi
+
+mkdir -p $1/src $1/build
+cp Makefile.model $1/Makefile 
+cp .gitignore.model $1/.gitignore
+
+git init ./$1
+
+git submodules add ./$1
+
+exit 0

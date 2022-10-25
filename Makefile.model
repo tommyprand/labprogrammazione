@@ -1,0 +1,16 @@
+default: all
+	
+compile:
+	cd build && \
+		g++ -c ../src/*.cpp
+
+link: compile
+	g++ -o main build/*.o
+
+clean:
+	rm build/*
+	rm main
+
+all: compile link
+
+.PHONY: all link lib build clean
