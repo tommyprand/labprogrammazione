@@ -17,3 +17,17 @@ Di base è presente un Makefile che permette le seguenti operazioni
 - `make link` Compila e crea un file eseguibile chiamato main (richiede che esista un file main.o con il main)
 - `make clean` Elimina tutti i file oggetto e l'eseguibile
 - `make` Esegue `make compile` e `make link`
+
+## Dockerfile
+
+Nella repository è presente anche un Dockerfile per creare un immagine Docker con un ambiente di sviluppo funzionante.
+
+### Esempio di utilizzo
+
+Si suppone di essere nella radice della repository con la cartella del sotto-progetto chiamata \<nome-cartella\>
+
+1. Creazione immagine `docker build -t <tag-immagine> .`
+2. Esecuzione di container con bind mount nella cartella di un progetto `docker run -it -v ./<nome-cartella>/:/<nome-cartella> <tag-immagine>`
+3. Nel container `cd /<nome-cartella>`
+
+**Fine!** (Nel container è disponibile neovim)
