@@ -14,6 +14,6 @@ Nel progetto è presente un Makefile preso dal modello Makefile.model e una repo
 
 Di base è presente un Makefile che permette le seguenti operazioni
 - `make compile` Compila tutti i file .cpp nella cartella src e mette i file oggetto nella cartella build
-- `make pkg` Crea un file eseguibile chiamato main (richiede che esista un file main.o con il main)
+- `make link` Compila e crea un file eseguibile chiamato main (richiede che esista un file main.o con il main)
 - `make clean` Elimina tutti i file oggetto e l'eseguibile
-- `make` Esegue `make compile` e `make pkg`
+- `make` Esegue `make compile` e `make link`
